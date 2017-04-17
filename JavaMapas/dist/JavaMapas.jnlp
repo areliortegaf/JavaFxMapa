@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JavaMapas.jnlp">
+  <information>
+    <title>JavaMapas</title>
+    <vendor>asortega</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JavaMapas.jar" size="8010" download="eager" />
+    <jar href="lib\MapsJava.jar" size="58328" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="JavaMapas" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="javamapas.JavaMapas"  name="JavaMapas" />
+  <update check="always"/>
+</jnlp>

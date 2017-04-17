@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane id="AnchorPane" prefHeight="708.0" prefWidth="1033.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javamapas.FXMLDocumentController">
+    <children>
+      <ToolBar layoutY="-5.0" prefHeight="53.0" prefWidth="1033.0">
+        <items>
+          <Button fx:id="buscarubicacion" mnemonicParsing="false" onAction="#leerArchivo" prefHeight="33.0" prefWidth="385.0" text="Buscar ubicación">
+               <graphic>
+                  <TextField fx:id="ubicacioncaja" prefHeight="25.0" prefWidth="269.0" />
+               </graphic>
+            </Button>
+            <Button fx:id="guardarcoordenadas" mnemonicParsing="false" onAction="#geocoding" prefHeight="33.0" prefWidth="131.0" text="Guardar coordenadas" />
+            <Button fx:id="guardardireccion" mnemonicParsing="false" onAction="#guardarDireccion" prefHeight="34.0" prefWidth="111.0" text="Guardar direccion" />
+            <Button fx:id="mapaestatico" mnemonicParsing="false" prefHeight="34.0" prefWidth="91.0" text="Mapa estatico" />
+            <Button fx:id="mostrarstreetview" mnemonicParsing="false" prefHeight="35.0" prefWidth="76.0" text="Street View" />
+            <Button fx:id="mostrarindicaciones" mnemonicParsing="false" onAction="#cargarmapa" prefHeight="33.0" prefWidth="126.0" text="Cargar mapa" />
+        </items>
+      </ToolBar>
+      <Pane layoutY="48.0" prefHeight="34.0" prefWidth="1033.0">
+         <children>
+            <Label fx:id="coordenadas" layoutX="712.0" prefHeight="41.0" prefWidth="321.0" text="Las coordenadas son...                                                            " />
+            <Label fx:id="direccionlabel" layoutY="1.0" prefHeight="33.0" prefWidth="709.0" text="La direccion correcta es....                                                       " />
+         </children>
+      </Pane>
+      <BorderPane layoutX="-5.0" layoutY="623.0" prefHeight="85.0" prefWidth="1040.0" />
+      <WebView fx:id="webView" layoutY="75.0" prefHeight="633.0" prefWidth="1040.0" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Mapa JavaFX</title>
+    <style>
+      
+      #map {
+        height: 100%;
+      }
+     
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+
+
+    //var latitude = -28.643387;
+    //var longitude = 153.612224;
+//coordenadas por default
+    var lt= 19.4326077;
+    var lg= -99.133208;
+//funcion que actualiza las coordenadas 
+    function mandarCoordenadas(lit, lig){ 
+      lt=lit;
+      lg=lig;
+    }
+    //mandarCoordenadas(-28.643387, 153.612224);
+    
+//inicializa el mapa
+  function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: {lat: lt, lng: lg},
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+        position: google.maps.ControlPosition.TOP_CENTER
+    },
+    zoomControl: true,
+    zoomControlOptions: {
+        position: google.maps.ControlPosition.LEFT_CENTER
+    },
+    scaleControl: true,
+    streetViewControl: false,
+    streetViewControlOptions: {
+        position: google.maps.ControlPosition.LEFT_TOP
+    },
+    fullscreenControl: false
+  });
+
+  marker = new google.maps.Marker({
+    map: map,
+    draggable: true,
+    animation: google.maps.Animation.DROP,
+    position: {lat: lt, lng: lg}
+  });
+  marker.addListener('click', toggleBounce);
+}
+
+//Animacion de Marcador
+function toggleBounce() {
+  if (marker.getAnimation() !== null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
+}
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIza...&callback=initMap">
+    </script>
+  </body>
+</html>
